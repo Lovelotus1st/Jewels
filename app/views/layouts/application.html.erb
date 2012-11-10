@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY Jewells Store</title>
+<%= stylesheet_link_tag "scaffold" %>
+<%= stylesheet_link_tag "depot", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tag %>
+</head>
+<body class="<%= controller.controller_name %>">
+<body id="store" >
+
+<div id="banner">
+    <%= image_tag("/images/logo.png") %>
+    <%= image_tag("/images/title.png") %>
+    <%= image_tag("/images/logo.png") %>
+   <%= @page_title || "" %>      
+</div>
+
+<div id="banner1">
+<%= image_tag("/images/home.png") %><a href="http://www....">Home</a>
+<%= image_tag("/images/question.png") %><a href="http://www..../faq">Questions</a>
+<%= image_tag("/images/news.png") %><a href="http://www..../news">News</a>
+<%= image_tag("/images/contact.png") %><a href="http://www..../contact">Contact</a><br />    
+</div>
+<div id="columns">
+<div id="side_ii">
+Our Best Necklaces
+<%= image_tag("/images/wed5.png") %> <br />
+<%= image_tag("/images/neck2.png") %><br />
+<%= image_tag("/images/neck3.png") %><br />
+<%= image_tag("/images/neck4.png") %><br />
+<%= image_tag("/images/neck5.png") %><br />
+<%= image_tag("/images/neck6.png") %><br />
+<%= image_tag("/images/neck7.png") %><br />
+<%= image_tag("/images/neck8.png") %><br />  
+</div>
+<div id="side">
+<div id="cart">
+
+<% if @cart %>
+<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+<%= render @cart %>
+<% end %>
+<% end %>
+</div>
+<div id="side_i">
+Featured Wedding Rings
+<%= image_tag("/images/wed.png") %> <br />
+<%= image_tag("/images/wed1.png") %><br />
+<%= image_tag("/images/wed2.png") %><br />
+<%= image_tag("/images/wed3.png") %><br />
+<%= image_tag("/images/wed4.png") %> <br />
+<%= image_tag("/images/wed6.png") %><br />
+<%= image_tag("/images/wed7.png") %><br />
+<%= image_tag("/images/wed8.png") %><br />  
+</div>
+</div>
+<div id="main">
+<%= yield %>
+    </div>
+  </div>
+</body>
+</html>
